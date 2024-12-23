@@ -13,6 +13,10 @@
             padding: 0;
             color: #0c243c;
             background-color: #f4f4f4;
+            background-image: url('background.png'); /* Imagem de fundo no diretório */
+            background-size: cover; /* Faz a imagem cobrir toda a tela */
+            background-position: center center; /* Centraliza a imagem */
+            background-attachment: fixed; /* Deixa a imagem fixa enquanto rola a página */
         }
 
         header {
@@ -29,6 +33,22 @@
             z-index: 1000;
             width: 100%;
             box-sizing: border-box;
+            transition: all 0.3s ease; /* Transição suave para as alterações */
+        }
+
+        header.recolhido {
+            padding: 10px 30px; /* Diminuir o padding */
+            background-color: #dbdbdb;
+        }
+
+        header.recolhido img {
+            max-width: 120px; /* Reduzir o tamanho do logo */
+            transition: max-width 0.3s ease; /* Transição suave para o logo */
+        }
+
+        header.recolhido nav a {
+            font-size: 16px; /* Diminuir o tamanho da fonte dos links */
+            padding: 8px 12px; /* Diminuir o padding dos links */
         }
 
         header img {
@@ -76,7 +96,15 @@
             margin-top: 0;
         }
 
-        .caixa-contato, .formulario-contato {
+        .caixa-contato {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #dbdbdb;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario-contato {
             margin-top: 20px;
             padding: 20px;
             background-color: #dbdbdb;
@@ -198,72 +226,118 @@
         .caixa-contato a:hover {
             color: #005b96;
         }
+		/* Estilo do botão flutuante do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Cor verde do WhatsApp */
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
-        /* Media Queries for Mobile */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Cor verde mais escura ao passar o mouse */
+}
 
-            .areas-atuacao li {
-                width: 100%;
-                padding: 15px;
-            }
+.whatsapp-button i {
+    font-size: 24px;
+    margin-right: 10px;
+}
 
-            iframe {
-                height: 300px;
-            }
+/* Media Query para telas menores que 767px (celulares) */
+@media (max-width: 767px) {
+    body {
+        background-image: none; /* Remover imagem de fundo em telas menores */
+        background-color: #f4f4f4; /* Manter fundo sem imagem */
+    }
 
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    header {
+        padding: 10px 20px; /* Menos espaçamento no cabeçalho */
+    }
 
-            header img {
-                max-width: 150px;
-            }
+    header img {
+        max-width: 120px; /* Logo menor */
+    }
 
-            section {
-                padding: 20px;
-            }
+    nav {
+        display: block;
+        text-align: center;
+    }
 
-            .formulario-contato input, .formulario-contato textarea {
-                font-size: 14px;
-            }
+    nav a {
+        display: block;
+        padding: 8px 0;
+        font-size: 16px; /* Reduzir o tamanho da fonte dos links */
+    }
 
-            .formulario-contato button {
-                font-size: 14px;
-                padding: 10px 20px;
-            }
-        }
+    main {
+        padding: 100px 20px 20px;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                padding: 15px;
-            }
+    section {
+        padding: 20px;
+    }
 
-            .areas-atuacao li {
-                padding: 10px 20px;
-            }
+    .areas-atuacao ul {
+        display: block;
+    }
 
-            .formulario-contato input, .formulario-contato textarea {
-                font-size: 14px;
-            }
+    .areas-atuacao li {
+        width: 100%; /* Garantir que os itens ocupem toda a largura */
+        margin-bottom: 20px; /* Adicionar espaçamento entre os itens */
+    }
 
-            footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    iframe {
+        height: 250px; /* Reduzir a altura do mapa */
+    }
 
-            footer img {
-                max-width: 60px;
-            }
+    .whatsapp-button {
+        font-size: 16px; /* Diminuir o tamanho do botão */
+        padding: 12px;
+    }
+}
 
-            iframe {
-                height: 250px;
-            }
-        }
+/* Media Query para tablets (telas entre 768px e 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    header img {
+        max-width: 150px; /* Logo um pouco menor em tablets */
+    }
+
+    nav a {
+        font-size: 17px; /* Ajustar o tamanho da fonte */
+    }
+
+    main {
+        padding: 120px 20px 20px;
+    }
+
+    .areas-atuacao li {
+        width: 48%; /* Exibir dois itens por linha */
+        margin-bottom: 20px;
+    }
+
+    iframe {
+        height: 300px; /* Ajustar altura do mapa em tablets */
+    }
+
+    .whatsapp-button {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -271,20 +345,24 @@
         <img src="logo-cabecalho.png" alt="Logo Danilo Neto">
         <nav>
             <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
+            <a href="#servicos">Áreas de Atuação</a>
             <a href="#contato">Contato</a>
             <a href="#formulario-contato">Entre em Contato</a>
         </nav>
     </header>
-
+	
+<div class="imagem-banner">
+        <img src="sua-imagem.png" alt="Banner imagem" style="width: 100%; height: auto; object-fit: cover;">
+    </div>
+	
     <main>
         <section id="sobre">
             <h2>Sobre</h2>
-            <p>Com uma sólida trajetória no mercado jurídico, oferecemos soluções especializadas nas áreas de <strong>Direito do Trabalho</strong>, <strong>Direito Cível</strong> e <strong>Direito Previdenciário</strong>, sempre com foco no melhor interesse de nossos clientes. Nossa missão é fornecer consultoria e assessoria jurídica de alta qualidade, garantindo resultados eficazes e a melhor defesa para cada situação.</p>
+            <p>Com uma sólida trajetória de mais de 8 (oito) anos no mercado jurídico, oferecemos soluções especializadas nas áreas de <strong>Direito do Trabalho</strong>, <strong>Direito Cível</strong> e <strong>Direito Previdenciário</strong>, sempre com foco no melhor interesse de nossos clientes. Nossa missão é fornecer consultoria e assessoria jurídica de alta qualidade, garantindo resultados eficazes e a melhor defesa para cada situação.</p>
             <p>Em <strong>Direito do Trabalho</strong>, nossa atuação abrange tanto a prevenção quanto a resolução de conflitos, com assessoria jurídica dedicada para empresas e trabalhadores. Oferecemos suporte em questões relacionadas aos direitos individuais e coletivos, além de atuar em processos administrativos e judiciais, com o objetivo de assegurar que todas as partes envolvidas tenham seus direitos respeitados e devidamente protegidos.</p>
-            <p>Na área de <strong>Direito Cível</strong>, nossa equipe é especializada em litígios de natureza civil, comercial e consumerista. Atuamos com excelência perante os órgãos administrativos, judiciários e tribunais superiores, incluindo casos de Arbitragem. Nosso trabalho inclui a resolução de disputas contratuais, cobranças de dívidas, danos materiais e morais, e outras questões cíveis, sempre com foco na obtenção dos melhores resultados para nossos clientes.</p>
+            <p>Na área de <strong>Direito Cível</strong>, nosso time é especializada em litígios de natureza civil, comercial e consumerista. Atuamos com excelência perante os órgãos administrativos, judiciários e tribunais superiores, incluindo casos de Arbitragem. Nosso trabalho inclui a resolução de disputas contratuais, cobranças de dívidas, danos materiais e morais, e outras questões cíveis, sempre com foco na obtenção dos melhores resultados para nossos clientes.</p>
             <p>No <strong>Direito Previdenciário</strong>, oferecemos consultoria jurídica personalizada para a solicitação de benefícios, aposentadorias, pensões e auxílio-doença. Nosso time possui um profundo conhecimento das leis e regulamentos previdenciários, garantindo que nossos clientes tenham acesso a todos os seus direitos de forma eficiente e segura.</p>
-            <p>Com um compromisso sólido com a ética, transparência e resultados positivos, nossa empresa se destaca pela combinação de conhecimento jurídico profundo e um atendimento humanizado. Nossa missão é oferecer soluções práticas e confiáveis, proporcionando aos nossos clientes a confiança necessária para atravessar qualquer desafio jurídico com segurança e tranquilidade.</p>
+            <p>Com um compromisso sólido com a ética, transparência e resultados positivos, nosso escritório se destaca pela combinação de conhecimento jurídico profundo e um atendimento humanizado. Nossa missão é oferecer soluções práticas e confiáveis, proporcionando aos nossos clientes a confiança necessária para atravessar qualquer desafio jurídico com segurança e tranquilidade.</p>
         </section>
 
         <section id="servicos" class="areas-atuacao">
@@ -317,41 +395,50 @@
         <section id="contato">
             <h2>Contato</h2>
             <div class="caixa-contato">
-			<p><strong>E-mail:</strong> danilopiresneto@gmail.com</p>
+                <p><strong>E-mail:</strong> danilopiresneto@gmail.com</p>
                 <p><strong>Telefone/WhatsApp:</strong> (11) 99560-0794</p>
                 <p><strong>Endereço:</strong> Tv. Dona Paula, 13 - Higienópolis, São Paulo - SP, 01239-050</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14689.947517960258!2d-46.6582!3d-23.5592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce597373c056fd%3A0x24b5377d02c1be5a!2sTv.%20Dona%20Paula%2C%2013%20-%20Higien%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001239-050!5e0!3m2!1spt-BR!2sbr!4v1670594821327!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14689.947517960258!2d-46.6582!3d-23.5592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce597373c056fd%3A0x24b5377d02c1be5a!2sTv.%20Dona%20Paula%2C%2013%20-%20Higien%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001239-050!5e0!3m2!1spt-BR!2sbr!4v1670594821872!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
-        <section id="formulario-contato">
-            <h2>Entre em Contato</h2>
-            <div class="formulario-contato">
-                <h3>Nos envie uma mensagem e entraremos em contato o quanto antes!</h3>
-                <form action="envio_formulario.php" method="POST">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" required>
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
+        <section id="formulario-contato" class="formulario-contato">
+            <h2>Nos envie sua mensagem e entraremos em contato!</h2>
+            <form action="#" method="post">
+                <input type="text" name="nome" placeholder="Nome completo" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <img src="logo-rodape.png" alt="Logo Danilo Neto">
-        <p>&copy; 2024 Danilo Neto - Todos os direitos reservados.</p>
+        <img src="logo-footer.png" alt="Logo Danilo Neto">
+        <p>© 2024 Danilo Neto. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        function toggleArea(element) {
-            element.classList.toggle("expanded");
+        window.onscroll = function() {recolherCabecalho()};
+
+        var header = document.querySelector("header");
+        var logo = header.querySelector("img");
+
+        function recolherCabecalho() {
+            if (window.pageYOffset > 50) {
+                header.classList.add("recolhido");
+            } else {
+                header.classList.remove("recolhido");
+            }
+        }
+
+        function toggleArea(area) {
+            area.classList.toggle("expanded");
         }
     </script>
+	<!-- Botão de WhatsApp -->
+<a href="https://wa.me/5511995600794" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i> Enviar Mensagem
+</a>
 </body>
 </html>
