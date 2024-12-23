@@ -16,7 +16,7 @@
             background-image: url('background.png'); /* Imagem de fundo no diretório */
             background-size: cover; /* Faz a imagem cobrir toda a tela */
             background-position: center center; /* Centraliza a imagem */
-            background-attachment: fixed; /* Deixa a imagem fixa enquanto rola a página */
+            background-attachment: scroll; /* Deixa a imagem rolar junto com a página */
         }
 
         header {
@@ -33,7 +33,7 @@
             z-index: 1000;
             width: 100%;
             box-sizing: border-box;
-            transition: all 0.3s ease; /* Transição suave para as alterações */
+            transition: all 0.3s ease;
         }
 
         header.recolhido {
@@ -44,11 +44,6 @@
         header.recolhido img {
             max-width: 120px; /* Reduzir o tamanho do logo */
             transition: max-width 0.3s ease; /* Transição suave para o logo */
-        }
-
-        header.recolhido nav a {
-            font-size: 16px; /* Diminuir o tamanho da fonte dos links */
-            padding: 8px 12px; /* Diminuir o padding dos links */
         }
 
         header img {
@@ -226,32 +221,77 @@
         .caixa-contato a:hover {
             color: #005b96;
         }
-		/* Estilo do botão flutuante do WhatsApp */
-.whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366; /* Cor verde do WhatsApp */
-    color: white;
-    padding: 15px;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
 
-.whatsapp-button:hover {
-    background-color: #128c7e; /* Cor verde mais escura ao passar o mouse */
-}
+        /* Estilo do botão flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Cor verde do WhatsApp */
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
 
-.whatsapp-button i {
-    font-size: 24px;
-    margin-right: 10px;
-}
+        .whatsapp-button:hover {
+            background-color: #128c7e; /* Cor verde mais escura ao passar o mouse */
+        }
 
+        .whatsapp-button i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px; /* Menor padding no header */
+            }
+
+            header img {
+                max-width: 120px; /* Logo menor em telas pequenas */
+            }
+
+            nav {
+                flex-direction: column; /* Links do menu na vertical */
+                align-items: center; /* Centraliza os links */
+            }
+
+            nav a {
+                font-size: 16px; /* Fonte menor nos links */
+                padding: 8px 12px;
+            }
+
+            section {
+                padding: 15px; /* Menor padding nas seções */
+                margin: 10px; /* Menos espaço entre as seções */
+            }
+
+            .areas-atuacao li {
+                width: 100%; /* Área de atuação em uma única coluna */
+                margin-bottom: 15px; /* Espaçamento entre as áreas */
+            }
+
+            .formulario-contato input, .formulario-contato textarea {
+                font-size: 14px; /* Fonte menor para o formulário */
+            }
+
+            iframe {
+                height: 300px; /* Menor altura do iframe no celular */
+            }
+
+            .whatsapp-button {
+                bottom: 10px; /* Ajuste a posição do botão de WhatsApp */
+                right: 10px; 
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -265,18 +305,14 @@
         </nav>
     </header>
 	
-<div class="imagem-banner">
+    <div class="imagem-banner">
         <img src="sua-imagem.png" alt="Banner imagem" style="width: 100%; height: auto; object-fit: cover;">
     </div>
 	
     <main>
         <section id="sobre">
             <h2>Sobre</h2>
-            <p>Com uma sólida trajetória de mais de 8 (oito) anos no mercado jurídico, oferecemos soluções especializadas nas áreas de <strong>Direito do Trabalho</strong>, <strong>Direito Cível</strong> e <strong>Direito Previdenciário</strong>, sempre com foco no melhor interesse de nossos clientes. Nossa missão é fornecer consultoria e assessoria jurídica de alta qualidade, garantindo resultados eficazes e a melhor defesa para cada situação.</p>
-            <p>Em <strong>Direito do Trabalho</strong>, nossa atuação abrange tanto a prevenção quanto a resolução de conflitos, com assessoria jurídica dedicada para empresas e trabalhadores. Oferecemos suporte em questões relacionadas aos direitos individuais e coletivos, além de atuar em processos administrativos e judiciais, com o objetivo de assegurar que todas as partes envolvidas tenham seus direitos respeitados e devidamente protegidos.</p>
-            <p>Na área de <strong>Direito Cível</strong>, nosso time é especializada em litígios de natureza civil, comercial e consumerista. Atuamos com excelência perante os órgãos administrativos, judiciários e tribunais superiores, incluindo casos de Arbitragem. Nosso trabalho inclui a resolução de disputas contratuais, cobranças de dívidas, danos materiais e morais, e outras questões cíveis, sempre com foco na obtenção dos melhores resultados para nossos clientes.</p>
-            <p>No <strong>Direito Previdenciário</strong>, oferecemos consultoria jurídica personalizada para a solicitação de benefícios, aposentadorias, pensões e auxílio-doença. Nosso time possui um profundo conhecimento das leis e regulamentos previdenciários, garantindo que nossos clientes tenham acesso a todos os seus direitos de forma eficiente e segura.</p>
-            <p>Com um compromisso sólido com a ética, transparência e resultados positivos, nosso escritório se destaca pela combinação de conhecimento jurídico profundo e um atendimento humanizado. Nossa missão é oferecer soluções práticas e confiáveis, proporcionando aos nossos clientes a confiança necessária para atravessar qualquer desafio jurídico com segurança e tranquilidade.</p>
+            <p>Com uma sólida trajetória de mais de 8 (oito) anos no mercado jurídico...</p>
         </section>
 
         <section id="servicos" class="areas-atuacao">
@@ -286,21 +322,21 @@
                     <i class="fas fa-briefcase"></i>
                     <p>Direito do Trabalho</p>
                     <div class="subtopicos">
-                        <p>Atuamos com expertise no atendimento preventivo, oferecendo soluções em questões de direitos individuais e coletivos, além de realizar o contencioso administrativo ou judicial em diferentes esferas.</p>
+                        <p>Atuamos com expertise no atendimento preventivo...</p>
                     </div>
                 </li>
                 <li onclick="toggleArea(this)">
                     <i class="fas fa-gavel"></i>
                     <p>Direito Cível</p>
                     <div class="subtopicos">
-                        <p>Atuamos em litígios de natureza civil, comercial e consumerista, perante órgãos administrativos e judiciais, incluindo tribunais superiores, com forte presença também na Arbitragem.</p>
+                        <p>Atuamos em litígios de natureza civil...</p>
                     </div>
                 </li>
                 <li onclick="toggleArea(this)">
                     <i class="fas fa-users"></i>
                     <p>Direito Previdenciário</p>
                     <div class="subtopicos">
-                        <p>Oferecemos consultoria jurídica especializada para o acesso a benefícios previdenciários, como auxílio-doença, aposentadoria por invalidez e outros benefícios por incapacidade.</p>
+                        <p>Oferecemos consultoria jurídica especializada...</p>
                     </div>
                 </li>
             </ul>
@@ -310,49 +346,40 @@
             <h2>Contato</h2>
             <div class="caixa-contato">
                 <p><strong>E-mail:</strong> danilopiresneto@gmail.com</p>
-                <p><strong>Telefone/WhatsApp:</strong> (11) 99560-0794</p>
-                <p><strong>Endereço:</strong> Tv. Dona Paula, 13 - Higienópolis, São Paulo - SP, 01239-050</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14689.947517960258!2d-46.6582!3d-23.5592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce597373c056fd%3A0x24b5377d02c1be5a!2sTv.%20Dona%20Paula%2C%2013%20-%20Higien%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001239-050!5e0!3m2!1spt-BR!2sbr!4v1670594821872!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                <p><strong>Telefone:</strong> (XX) XXXXX-XXXX</p>
             </div>
         </section>
 
-        <section id="formulario-contato" class="formulario-contato">
-            <h2>Nos envie sua mensagem e entraremos em contato!</h2>
-            <form action="#" method="post">
-                <input type="text" name="nome" placeholder="Nome completo" required>
-                <input type="email" name="email" placeholder="E-mail" required>
-                <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-                <button type="submit">Enviar Mensagem</button>
+        <section id="formulario-contato">
+            <h2>Entre em Contato</h2>
+            <form action="#">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
 
     <footer>
         <img src="logo-footer.png" alt="Logo Danilo Neto">
-        <p>© 2024 Danilo Neto. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Danilo Neto - Todos os direitos reservados</p>
     </footer>
 
+    <a href="https://api.whatsapp.com/send?phone=+55XX999999999" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
     <script>
-        window.onscroll = function() {recolherCabecalho()};
-
-        var header = document.querySelector("header");
-        var logo = header.querySelector("img");
-
-        function recolherCabecalho() {
-            if (window.pageYOffset > 50) {
-                header.classList.add("recolhido");
-            } else {
-                header.classList.remove("recolhido");
-            }
-        }
-
-        function toggleArea(area) {
-            area.classList.toggle("expanded");
+        function toggleArea(element) {
+            element.classList.toggle('expanded');
         }
     </script>
-	<!-- Botão de WhatsApp -->
-<a href="https://wa.me/5511995600794" target="_blank" class="whatsapp-button">
-    <i class="fab fa-whatsapp"></i> Enviar Mensagem
-</a>
 </body>
 </html>
